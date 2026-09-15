@@ -129,3 +129,16 @@ def inspect_file(file: Annotated[UploadFile, File()]):
     except ValueError as exc:
         raise HTTPException(422, str(exc)) from exc
     return {"headers": table.headers, "total_rows": len(table.rows)}
+
+
+@app.get("/demo.csv")
+def demo_file():
+    from fastapi.responses import Response
+
+    from importguard.demo import DEMO_CSV
+
+    return Response(
+        content=DEMO_CSV,
+        media_type="text/csv",
+        headers={"Content-Disposition": 'attachment; filename="demo.csv"'},
+    )

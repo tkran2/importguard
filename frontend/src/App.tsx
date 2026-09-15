@@ -151,6 +151,26 @@ export default function App() {
         <p>Map your columns, catch invalid records, and keep a report of every import.</p>
       </header>
 
+      <section className="card" style={{ marginBottom: 24 }}>
+        <strong>Try the sample import</strong>
+        <p className="muted">
+          The hosted demo uses synthetic data and shared import history.
+          It accepts only the supplied sample. Run locally to upload your own files.
+          If the sample is already imported, view its saved report in Recent imports.
+        </p>
+        <button disabled={busy} onClick={() => {
+          setBusy(true)
+          setError('')
+          fetch('/api/demo.csv')
+            .then(async response => {
+              if (!response.ok) throw new Error('Could not load demo data.')
+              const blob = await response.blob()
+              await chooseFile(new File([blob], 'demo.csv', { type: 'text/csv' }))
+            })
+            .catch(err => setError(err instanceof Error ? err.message : 'Request failed.'))
+            .finally(() => setBusy(false))
+        }}>Load demo data</button>
+      </section>
       {error && <div className="error" role="alert">{error}</div>}
       <div className="workspace">
         <section className="card">

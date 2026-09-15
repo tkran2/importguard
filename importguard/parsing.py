@@ -26,6 +26,9 @@ class ParsedTable:
 
 
 def parse_csv(content: bytes) -> ParsedTable:
+    from importguard.demo import enforce_demo_upload
+
+    enforce_demo_upload(content)
     if not content:
         raise FileValidationError("The uploaded file is empty.")
     if len(content) > MAX_BYTES:
