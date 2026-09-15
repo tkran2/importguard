@@ -1,0 +1,6 @@
+Name,Email,Company
+Jane Doe,jane@example.com,Example Inc
+Tom Sample,tom@example.com,Sample Co
+Invalid Email,not-an-email,Example Inc
+,jules@example.com,Sample Co
+Duplicate Jane,JANE@example.com,Example Inc
