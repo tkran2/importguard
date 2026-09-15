@@ -1,5 +1,9 @@
 # ImportGuard
 
+[Open the live demo](https://importguard-tkran2.onrender.com)
+
+The public demo accepts supplied synthetic data only. Free hosting may take about a minute to wake after inactivity.
+
 A customer CSV import application built with React, TypeScript, FastAPI,
 SQLAlchemy, and PostgreSQL.
 
@@ -59,7 +63,7 @@ In another terminal:
     IMPORTGUARD_TEST_DATABASE=1 uv run python -m pytest -q
     npm --prefix frontend run build
 
-The suite contains 47 tests, including three PostgreSQL integration tests
+The suite contains 50 tests, including three PostgreSQL integration tests
 covering retries, duplicate protection across files, and rollback.
 Without IMPORTGUARD_TEST_DATABASE=1, those three tests are skipped.
 Integration test records are rolled back.
