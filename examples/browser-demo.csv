@@ -1,0 +1,7 @@
+Customer Name,Contact Email,Organization
+Alex Morgan,alex.cb4009c6859d@example.com,Northstar
+Sam Rivera,sam.cb4009c6859d@example.com,Cedar Labs
+Taylor Chen,taylor.cb4009c6859d@example.com,Harbor
+Invalid Address,not-an-email,Northstar
+,missing.cb4009c6859d@example.com,Cedar Labs
+Duplicate Alex,alex.cb4009c6859d@example.com,Northstar
